@@ -106,6 +106,34 @@ img{
     margin-top: 30px;
     font-weight: bold;
 }
+/*Pricing*/
+.pricing-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 50px;
+    gap:30px;
+}
+.pricing .pricing-card-subheading{
+    margin-bottom: 30px;
+}
+.pricing .pricing-card-price{
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+.pricing ul{
+    margin: 30px 0;
+}
+.pricing ul li{
+    margin: 20px;
+}
+.pricing ul li i{
+    margin-right: 10px;
+}
+
+.pricing .pricing-footer{
+   margin: 30px 0; 
+}
 /*Utility classes*/
 .container{
     max-width: 1100px;
@@ -136,6 +164,7 @@ img{
     border-radius: 10px;
     cursor: pointer;
     transition: 0.5s;
+    text-align: center;
 }
 .btn:hover{
     opacity: 0.8;
