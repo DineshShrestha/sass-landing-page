@@ -101,6 +101,11 @@ img{
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
+
+.testimonials .card p:nth-child(2){
+    margin-top: 30px;
+    font-weight: bold;
+}
 /*Utility classes*/
 .container{
     max-width: 1100px;
@@ -112,7 +117,13 @@ img{
     margin: 0 auto;
     padding: 0 15px;
 }
-
+/* Card */
+.card{
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 20px;
+}
 /* Buttons*/
 .btn{
     display: inline-block;
@@ -200,9 +211,3 @@ img{
     color: #fff;
 }
 
-/* Card */
-.card{
-    background: #fff;
-    color: #000;
-    border-radius: 10px;
-}
