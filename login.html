@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="images/x-icon" />
+    <title>Log In | Growth App</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="container nav-inner">
+          <a class="logo" href="index.html">
+            <img src="images/logo.png" alt="Growth App" />
+          </a>
+
+          <ul class="main-menu" aria-label="Main navigation">
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="about.html">About Us</a></li>
+            <li><a class="nav-link" href="blog.html">Blog</a></li>
+            <li>
+              <a class="btn btn-outline" href="login.html">
+                <i class="fa fa-user"></i>
+                Log In
+              </a>
+            </li>
+            <li><a class="btn btn-primary" href="index.html#pricing">Get Started</a></li>
+          </ul>
+
+          <button
+            class="hamburger-button"
+            id="hamburger-button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu" aria-label="Mobile menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a class="btn btn-outline btn-block" href="login.html"><i class="fa fa-user"></i> Log In</a></li>
+            <li><a class="btn btn-primary btn-block" href="index.html#pricing">Get Started</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="auth">
+        <div class="container">
+          <div class="auth-grid">
+            <div class="card card-elevated auth-card">
+              <h2>Log in</h2>
+              <p class="section-subtitle">Use your email and password.</p>
+
+              <form class="form">
+                <div class="field">
+                  <label for="login-email">Email</label>
+                  <input id="login-email" type="email" placeholder="you@company.com" />
+                </div>
+
+                <div class="field">
+                  <label for="login-password">Password</label>
+                  <input id="login-password" type="password" placeholder="Your password" />
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                <p class="helper">No account yet. Use Get Started on the home page.</p>
+              </form>
+            </div>
+
+            <div class="card auth-card">
+              <h2>What you get</h2>
+              <p class="section-subtitle">A simple system for weekly execution.</p>
+
+              <ul class="feature-list" style="margin-top: 12px;">
+                <li><i class="fas fa-check"></i>Weekly priorities and owners</li>
+                <li><i class="fas fa-check"></i>KPIs and reporting</li>
+                <li><i class="fas fa-check"></i>Tasks and follow ups</li>
+                <li><i class="fas fa-check"></i>Team visibility</li>
+              </ul>
+
+              <a class="btn btn-ghost btn-block" href="index.html#pricing">See pricing</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-bottom">© <span id="year"></span> Growth App. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

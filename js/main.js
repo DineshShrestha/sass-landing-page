@@ -1,41 +1,90 @@
-//FAQ Accordian
-document.addEventListener('DOMContentLoaded', ()=>{
-    const faqContainer = document.querySelector('.faq-content');
-    faqContainer.addEventListener("click", (e)=>{
-        const groupHeader=  e.target.closest('.faq-group-header')
-        if(!groupHeader) return;
-        const group = groupHeader.parentElement;
-        const groupBody = group.querySelector('.faq-group-body')
-        const icon = groupHeader.querySelector('i');
-        
-        //Toggle icon
-        icon.classList.toggle('fa-plus');
-        icon.classList.toggle('fa-minus');
+// main.js
 
-        //Toggle visibility of body
-        groupBody.classList.toggle('open');
+document.addEventListener("DOMContentLoaded", () => {
+  // Footer year
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-        // Close other open faq body
-        const otherGroups = faqContainer.querySelectorAll('.faq-group');
-        otherGroups.forEach((otherGroup)=>{
-            if(otherGroup !== group){
-                const otherGroupBody = otherGroup.querySelector('.faq-group-body');
-                const otherIcon = otherGroup.querySelector('.faq-group-header i');
+  // Mobile menu
+  const hamburgerButton = document.getElementById("hamburger-button");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-                otherGroupBody.classList.remove('open');
-                otherIcon.classList.remove('fa-minus');
-                otherIcon.classList.add('fa-plus');
-            }
-        })
-    })
-})
+  const closeMobileMenu = () => {
+    if (!mobileMenu) return;
+    mobileMenu.classList.remove("active");
+    if (hamburgerButton) {
+      hamburgerButton.setAttribute("aria-expanded", "false");
+      hamburgerButton.setAttribute("aria-label", "Open menu");
+    }
+  };
 
-// Mobile Menu
-document.addEventListener('DOMContentLoaded', ()=>{
-    const hamburgerButton = document.querySelector('.hamburger-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
+  const toggleMobileMenu = () => {
+    if (!mobileMenu) return;
+    const isOpen = mobileMenu.classList.toggle("active");
+    if (hamburgerButton) {
+      hamburgerButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      hamburgerButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    }
+  };
 
-    hamburgerButton.addEventListener('click', ()=>{
-        mobileMenu.classList.toggle('active');
-    })
-})
+  if (hamburgerButton && mobileMenu) {
+    hamburgerButton.addEventListener("click", toggleMobileMenu);
+
+    // Close on outside click
+    document.addEventListener("click", (e) => {
+      const clickedInside =
+        mobileMenu.contains(e.target) || hamburgerButton.contains(e.target);
+      if (!clickedInside) closeMobileMenu();
+    });
+
+    // Close on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMobileMenu();
+    });
+
+    // Close after clicking a link
+    mobileMenu.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (link) closeMobileMenu();
+    });
+  }
+
+  // FAQ accordion
+  const faqContainer = document.querySelector(".faq-content");
+  if (faqContainer) {
+    const closeAllFaq = (exceptGroup) => {
+      const groups = faqContainer.querySelectorAll(".faq-group");
+      groups.forEach((group) => {
+        if (group === exceptGroup) return;
+        const body = group.querySelector(".faq-group-body");
+        const icon = group.querySelector(".faq-group-header i");
+        if (body) body.classList.remove("open");
+        if (icon) {
+          icon.classList.remove("fa-minus");
+          icon.classList.add("fa-plus");
+        }
+      });
+    };
+
+    faqContainer.addEventListener("click", (e) => {
+      const header = e.target.closest(".faq-group-header");
+      if (!header) return;
+
+      const group = header.closest(".faq-group");
+      if (!group) return;
+
+      const body = group.querySelector(".faq-group-body");
+      const icon = header.querySelector("i");
+      if (!body) return;
+
+      const isOpen = body.classList.toggle("open");
+
+      if (icon) {
+        icon.classList.toggle("fa-plus", !isOpen);
+        icon.classList.toggle("fa-minus", isOpen);
+      }
+
+      closeAllFaq(group);
+    });
+  }
+});

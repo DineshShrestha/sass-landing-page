@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="images/x-icon" />
+    <title>Post | Growth App</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="container nav-inner">
+          <a class="logo" href="index.html">
+            <img src="images/logo.png" alt="Growth App" />
+          </a>
+
+          <ul class="main-menu" aria-label="Main navigation">
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="about.html">About Us</a></li>
+            <li><a class="nav-link" href="blog.html">Blog</a></li>
+            <li>
+              <a class="btn btn-outline" href="login.html">
+                <i class="fa fa-user"></i>
+                Log In
+              </a>
+            </li>
+            <li><a class="btn btn-primary" href="index.html#pricing">Get Started</a></li>
+          </ul>
+
+          <button
+            class="hamburger-button"
+            id="hamburger-button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu" aria-label="Mobile menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a class="btn btn-outline btn-block" href="login.html"><i class="fa fa-user"></i> Log In</a></li>
+            <li><a class="btn btn-primary btn-block" href="index.html#pricing">Get Started</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" style="padding: 44px 0 12px;">
+        <div class="container hero-grid" style="grid-template-columns: 1fr;">
+          <div class="hero-content">
+            <p class="badge"><i class="fa-solid fa-calendar"></i> 2026-02-11</p>
+            <h1 class="hero-heading">Weekly planning template for small teams</h1>
+            <p class="hero-text">A short workflow you apply in 30 minutes every Monday.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials" style="padding: 28px 0 54px;">
+        <div class="container-sm">
+          <div class="card card-elevated">
+            <div class="quote">
+              <p style="color: var(--text); font-weight: 800;">Step by step</p>
+              <p style="margin-top: 10px;">1. Pick 3 outcomes for the week.</p>
+              <p>2. Assign one owner per outcome.</p>
+              <p>3. Add 2 tasks per outcome.</p>
+              <p>4. Define 1 metric per outcome.</p>
+              <p>5. Review every Friday for 10 minutes.</p>
+
+              <p style="margin-top: 16px; color: var(--muted);">
+                Replace this text with your real content.
+              </p>
+
+              <p style="margin-top: 16px;">
+                <a class="btn btn-ghost" href="blog.html"><i class="fa-solid fa-arrow-left"></i> Back to blog</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-bottom">© <span id="year"></span> Growth App. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
